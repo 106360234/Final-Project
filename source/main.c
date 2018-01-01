@@ -7,13 +7,13 @@
 #define QUARTER_SPEED1 100
 void PalmHeart(void);
 void ForAlice(void);
-
+void Train(void);
 void Giant(void);
 int main()
 {
 
 
-	int  choice; //設定輸入值
+	int  choice;
 
 	printf("歡迎來到點歌系統，請選擇歌曲號碼(1~4)，輸入5結束 ： ");
 	scanf_s("%d", &choice);
@@ -26,7 +26,7 @@ int main()
 			ForAlice();
 			break;
 		case 2:
-
+			Train();
 			break;
 		case 3:
 			Giant();
@@ -41,6 +41,9 @@ int main()
 		printf("請選擇歌曲號碼(1~4)，輸入5結束 ： ");
 		scanf_s("%d", &choice);
 	}
+	printf("\n播放結束，關閉系統\n");
+	system("pause");
+	return 0;
 }
 
 
@@ -54,6 +57,7 @@ void ForAlice(void)
 	{ 1320, 1244, 1320, 1244, 1320, 988 }, { 1176, 1048, 880, 0, 0, 0 }, { 830, 880, 988, 0, 0, 0 }, { 784, 830, 988, 1048, 0, 0 },
 	{ 1320, 1320, 1244, 1320, 1244, 1320 }, { 988, 1176, 1048, 880, 0, 0 }, { 830, 880, 988, 0, 0, 0 }, { 1320, 1048, 988, 880, 0, 0 },
 	{ 988, 1048, 1176, 1320, 0, 0 }, { 1568, 1480, 1320, 1176, 0, 0 }, { 1480, 1320, 1176, 1048, 0, 0 }, { 1320, 1176, 1048, 988, 0, 0 } };
+
 	int tempo[25][6] = { { 1, 1, 1, 1, 1, 1 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
 	{ 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
 	{ 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
@@ -111,11 +115,38 @@ void PalmHeart(void)
 		else Beep(Freq[PalmHeart_Freq[i]], PalmHeart_Tempo[i] * QUARTER_SPEED);
 	}
 }
+void Train(void)
+{
+
+	const DWORD Freq[FREQ_CNT + 1] = { 0, 524, 588, 660, 698, 784, 880, 1976 };
+
+	const DWORD Train_Freq[] =
+	{
+		5, 5, 3, 1, 5, 5, 3, 1, 2, 3, 4, 4, 3, 4, 5, 5, 5, 3, 5, 3, 2, 3, 1, 4, 2, 2, 2, 3, 1, 1, 1, 4, 2, 2, 2, 3, 1, 1, 1, 2, 4, 3, 2, 1, 2, 1
+	};
+
+	const DWORD Train_Tempo[] =
+	{
+		3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+		2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+		2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+
+	};
+
+	int i;
+
+	for (i = 0; i != sizeof(Train_Freq) / sizeof(Train_Freq[0]); ++i)
+	{
+		if (Train_Tempo[i] == Freq[0]) Sleep(Train_Tempo[i] * QUARTER_SPEED);
+		else Beep(Freq[Train_Freq[i]], Train_Tempo[i] * QUARTER_SPEED);
+	}
+}
 void Giant(void)
 {
 	const DWORD Freq[FREQ_CNT1 + 1] = { 0, 262, 294, 330, 349, 392, 440, 494,
 		524, 588, 660, 698, 784, 880, 998,
 		1048, 1176, 1320, 1396, 1568, 1760, 1976 };
+
 	const DWORD Giant_Freq[] = {
 		16, 16, 18, 17, 15, 16, 16, 18, 17, 15,
 		16, 18, 17, 16, 16, 15, 13, 15,
@@ -126,6 +157,7 @@ void Giant(void)
 		16, 16, 18, 17, 15, 16, 16, 18, 17, 15,
 		16, 18, 17, 16, 15, 16
 	};
+
 	const DWORD Giant_Tempo[] = {
 		2, 2, 2, 2, 4, 2, 2, 2, 2, 4,
 		2, 2, 2, 2, 2, 2, 2, 2,
@@ -135,6 +167,7 @@ void Giant(void)
 		2, 2, 2, 2, 2, 2, 2, 2,
 		2, 2, 2, 2, 4, 2, 2, 2, 2, 4,
 		2, 2, 2, 2, 4, 6
+
 	};
 
 	int i;

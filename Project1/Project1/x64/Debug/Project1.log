@@ -1,13 +1,14 @@
-﻿已經開始建置於 2018/1/1 下午 09:46:50。
-     1>節點 2 (Build 目標) 上的專案 "C:\Users\user\Desktop\Final-Project\Project1\Project1\Project1.vcxproj"。
+﻿已經開始建置於 2018/1/1 下午 09:56:35。
+     1>節點 2 (Build 目標) 上的專案 "C:\Users\Jordan\Desktop\Final-Project\Project1\Project1\Project1.vcxproj"。
      1>ClCompile:
-         D:\Visual Studio\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TC /errorReport:prompt ..\..\source\main.c
+         D:\VISUAL STUIO\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TC /errorReport:prompt ..\..\source\main.c
          main.c
        Link:
-         D:\Visual Studio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\user\Desktop\Final-Project\Project1\x64\Debug\Project1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\user\Desktop\Final-Project\Project1\x64\Debug\Project1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\user\Desktop\Final-Project\Project1\x64\Debug\Project1.lib" /MACHINE:X64 x64\Debug\main.obj
-         Project1.vcxproj -> C:\Users\user\Desktop\Final-Project\Project1\x64\Debug\Project1.exe
-     1>專案 "C:\Users\user\Desktop\Final-Project\Project1\Project1\Project1.vcxproj" (Build 目標) 建置完成。
+         D:\VISUAL STUIO\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jordan\Desktop\Final-Project\Project1\x64\Debug\Project1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\Jordan\Desktop\Final-Project\Project1\x64\Debug\Project1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Jordan\Desktop\Final-Project\Project1\x64\Debug\Project1.lib" /MACHINE:X64 x64\Debug\main.obj
+         LINK : 最後的累加連結找不到或未建置 C:\Users\Jordan\Desktop\Final-Project\Project1\x64\Debug\Project1.exe，正在執行完整連結
+         Project1.vcxproj -> C:\Users\Jordan\Desktop\Final-Project\Project1\x64\Debug\Project1.exe
+     1>專案 "C:\Users\Jordan\Desktop\Final-Project\Project1\Project1\Project1.vcxproj" (Build 目標) 建置完成。
 
 建置成功。
 
-經過時間 00:00:01.97
+經過時間 00:00:02.37
