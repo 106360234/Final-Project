@@ -6,15 +6,14 @@
 #define QUARTER_SPEED 200
 #define QUARTER_SPEED1 100
 void PalmHeart(void);
+void ForAlice(void);
+
 void Giant(void);
-const DWORD Freq[FREQ_CNT1 + 1] = { 0, 262, 294, 330, 349, 392, 440, 494,
-									524, 588, 660, 698, 784, 880, 998,
-									1048, 1176, 1320, 1396, 1568, 1760, 1976 };
 int main()
 {
 
 
-	int  choice;
+	int  choice; //設定輸入值
 
 	printf("歡迎來到點歌系統，請選擇歌曲號碼(1~4)，輸入5結束 ： ");
 	scanf_s("%d", &choice);
@@ -24,10 +23,10 @@ int main()
 		switch (choice)
 		{
 		case 1:
-			
+			ForAlice();
 			break;
 		case 2:
-			
+
 			break;
 		case 3:
 			Giant();
@@ -39,20 +38,45 @@ int main()
 			printf("請重新輸入!\n");
 			break;
 		}
-		printf("\n請選擇歌曲號碼(1~4)，輸入5結束 ： ");
+		printf("請選擇歌曲號碼(1~4)，輸入5結束 ： ");
 		scanf_s("%d", &choice);
 	}
-	printf("\n播放結束，系統關閉\n");
-	system("pause");
-	return 0;
 }
 
 
+void ForAlice(void)
+{
+	int row, col;
+	int voice[25][6] = { { 1320, 1244, 1320, 1244, 1320, 988 }, { 1176, 1048, 880, 0, 0, 0 }, { 830, 880, 988, 0, 0, 0 }, { 784, 830, 988, 1048, 0, 0 },
+	{ 1320, 1320, 1244, 1320, 1244, 1320 }, { 988, 1176, 1048, 880, 0, 0 }, { 830, 880, 988, 0, 0, 0 }, { 1320, 1048, 988, 880, 0, 0 },
+	{ 988, 1048, 1176, 1320, 0, 0 }, { 1568, 1480, 1320, 1176, 0, 0 }, { 1480, 1320, 1176, 1048, 0, 0 }, { 1320, 1176, 1048, 988, 0, 0 },
+	{ 1048, 1176, 1244, 0, 0, 0 },
+	{ 1320, 1244, 1320, 1244, 1320, 988 }, { 1176, 1048, 880, 0, 0, 0 }, { 830, 880, 988, 0, 0, 0 }, { 784, 830, 988, 1048, 0, 0 },
+	{ 1320, 1320, 1244, 1320, 1244, 1320 }, { 988, 1176, 1048, 880, 0, 0 }, { 830, 880, 988, 0, 0, 0 }, { 1320, 1048, 988, 880, 0, 0 },
+	{ 988, 1048, 1176, 1320, 0, 0 }, { 1568, 1480, 1320, 1176, 0, 0 }, { 1480, 1320, 1176, 1048, 0, 0 }, { 1320, 1176, 1048, 988, 0, 0 } };
+	int tempo[25][6] = { { 1, 1, 1, 1, 1, 1 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
+	{ 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
+	{ 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
+	{ 1, 1, 1, 2, 0, 0 },
+	{ 1, 1, 1, 1, 1, 1 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
+	{ 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 4, 0, 0, 0 }, { 1, 1, 1, 4, 0, 0 },
+	{ 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 }, { 1, 1, 1, 4, 0, 0 }, };
+	for (row = 0; row<25; row++)
+	{
+		for (col = 0; col<6; col++)
+		{
+			Beep(voice[row][col], tempo[row][col] * 200);
+		}
+
+	}
+}
 void PalmHeart(void)
 {
 	int i;
 
-	
+	const DWORD Freq[FREQ_CNT1 + 1] = { 0, 262, 294, 330, 349, 392, 440, 494,
+		524, 588, 660, 698, 784, 880, 998,
+		1048, 1176, 1320, 1396, 1568, 1760, 1976 };
 
 	const DWORD PalmHeart_Freq[] = {
 		6, 6, 10, 9, 8, 7, 6, 8, 9, 7, 5, 0,
@@ -87,12 +111,12 @@ void PalmHeart(void)
 		else Beep(Freq[PalmHeart_Freq[i]], PalmHeart_Tempo[i] * QUARTER_SPEED);
 	}
 }
-
 void Giant(void)
 {
-
-
-	const DWORD PalmHeart_Freq[] = {
+	const DWORD Freq[FREQ_CNT1 + 1] = { 0, 262, 294, 330, 349, 392, 440, 494,
+		524, 588, 660, 698, 784, 880, 998,
+		1048, 1176, 1320, 1396, 1568, 1760, 1976 };
+	const DWORD Giant_Freq[] = {
 		16, 16, 18, 17, 15, 16, 16, 18, 17, 15,
 		16, 18, 17, 16, 16, 15, 13, 15,
 		16, 18, 17, 15, 16, 16, 18, 17, 15,
@@ -102,8 +126,7 @@ void Giant(void)
 		16, 16, 18, 17, 15, 16, 16, 18, 17, 15,
 		16, 18, 17, 16, 15, 16
 	};
-
-	const DWORD PalmHeart_Tempo[] = {
+	const DWORD Giant_Tempo[] = {
 		2, 2, 2, 2, 4, 2, 2, 2, 2, 4,
 		2, 2, 2, 2, 2, 2, 2, 2,
 		2, 2, 2, 4, 2, 2, 2, 2, 4,
@@ -112,14 +135,12 @@ void Giant(void)
 		2, 2, 2, 2, 2, 2, 2, 2,
 		2, 2, 2, 2, 4, 2, 2, 2, 2, 4,
 		2, 2, 2, 2, 4, 6
-
 	};
 
 	int i;
 
-	for (i = 0; i != sizeof(PalmHeart_Freq) / sizeof(PalmHeart_Freq[0]); ++i) {
-		if (PalmHeart_Tempo[i] == Freq[0]) Sleep(PalmHeart_Tempo[i] * QUARTER_SPEED);
-		else Beep(Freq[PalmHeart_Freq[i]], PalmHeart_Tempo[i] * QUARTER_SPEED);
-
+	for (i = 0; i != sizeof(Giant_Freq) / sizeof(Giant_Freq[0]); ++i) {
+		if (Giant_Tempo[i] == Freq[0]) Sleep(Giant_Tempo[i] * QUARTER_SPEED1);
+		else Beep(Freq[Giant_Freq[i]], Giant_Tempo[i] * QUARTER_SPEED1);
 	}
 }
